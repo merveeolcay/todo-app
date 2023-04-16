@@ -1,0 +1,18 @@
+:root{
+    --main-color: #40363e;
+    --secondary-color: #b695b6;
+    --radius: 8px;
+}
+
+body{
+    font-family: "Gill Sans", sans-serif;
+    font-size: 20px;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
