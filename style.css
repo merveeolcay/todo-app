@@ -1,18 +1,72 @@
-:root{
+:root {
     --main-color: #40363e;
     --secondary-color: #b695b6;
-    --radius: 8px;
+    --input-bg: #00000033;
+    --radius: 5px;
+    --input-height: 40px;
+    --input-width: 250px;
 }
 
-body{
+* {
+    box-sizing: border-box;
+}
+
+button, input {
+    border: none;
+    outline: none;
+}
+
+body {
     font-family: "Gill Sans", sans-serif;
     font-size: 20px;
     height: 100vh;
     margin: 0;
     background-color: var(--main-color);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     color: #fff;
 }
+
+.app-title {
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 45px;
+}
+
+.todo-header {
+    display: flex;
+}
+
+.todo-add, .todo-search{
+    height: var(--input-height);
+    width: var(--input-width);
+    border-radius: var(--radius);
+    background-color: var(--input-bg);
+    padding-left: 7px;
+    color: #fff;
+}
+
+.todo-add-btn {
+    height: var(--input-height);
+    border-radius: var(--radius);
+    background-color: rgb(135, 162, 135);
+    margin-left: 4px;
+}
+
+.todo-clear-btn {
+    height: var(--input-height);
+    margin-left: 8px;
+    border-radius: var(--radius);
+    background-color: rgb(174, 129, 129);
+}
+
+.todo-completed-btn {
+    height: var(--input-height);
+    border-radius: var(--radius);
+    background-color: rgb(214, 214, 165);
+    margin-left: 4px;
+}
+
+ 
