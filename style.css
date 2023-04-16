@@ -53,6 +53,7 @@ body {
     border-radius: var(--radius);
     background-color: rgb(135, 162, 135);
     margin-left: 4px;
+    width: calc(142px / 2 - 8px);
 }
 
 .todo-clear-btn {
@@ -60,6 +61,7 @@ body {
     margin-left: 8px;
     border-radius: var(--radius);
     background-color: rgb(174, 129, 129);
+    width: calc(142px / 2 - 8px);
 }
 
 .todo-completed-btn {
