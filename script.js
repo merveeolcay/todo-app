@@ -13,6 +13,8 @@ clearTodosBtn.addEventListener("click", clearTodos);
 
 searchInput.addEventListener("keyup", searchTodo);
 
+deleteCompletedBtn.addEventListener("click", deleteCheckedTodos);
+
 function addTodo(event) {
   event.preventDefault();
   let todoValue = todoInput.value;
@@ -46,8 +48,7 @@ function removeTodo(event) {
 }
 
 function checkTodo(event) {
-  const todoText =
-    event.target.parentElement.parentElement.previousElementSibling;
+  const todoText = event.target.parentElement.parentElement.previousElementSibling;
   todoText.classList.toggle("line-through");
 }
 
@@ -62,5 +63,16 @@ function searchTodo(event) {
     } else {
       todos[i].classList.add("todo-hide");
     }
+  }
+}
+
+function deleteCheckedTodos(event){
+  
+  const todos = document.querySelectorAll(".todo-wrapper");
+  for (let i = 0; i < todos.length; i++) {
+  const checkedTodos = todos[i].querySelector(".todo-text.line-through");
+  if(checkedTodos){
+    todos[i].remove();
+  }
   }
 }

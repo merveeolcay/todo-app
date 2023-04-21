@@ -88,6 +88,7 @@ body {
     height: var(--global-height);
     padding: var(--padding-inline);
     border-radius: var(--radius);
+    margin-bottom: 10px;
 }
 
 .todo-icons {
