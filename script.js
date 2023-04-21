@@ -18,7 +18,7 @@ function addTodo(event) {
     <li class="todo-wrapper">
     <div class="todo-text">${todoValue}</div>
     <div class="todo-icons">
-      <div class="todo-complete">
+      <div onclick="checkTodo(event)" class="todo-complete">
         <i class="fa-regular fa-square-check"></i>
       </div>
       <div onclick="removeTodo(event)" class="todo-delete">
@@ -39,6 +39,12 @@ function clearTodos() {
 }
 
 function removeTodo(event) {
-  const thisWrapper = event.target.parentElement.parentElement.parentElement;
-  thisWrapper.remove();
+  const todoWrapper = event.target.parentElement.parentElement.parentElement;
+  todoWrapper.remove();
+}
+
+function checkTodo(event) {
+  const todoText = event.target.parentElement.parentElement.previousElementSibling;
+  todoText.classList.toggle('line-through') 
+
 }
