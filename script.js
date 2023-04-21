@@ -50,17 +50,16 @@ function removeTodo(event) {
 }
 
 function checkTodo(event) {
-  const todoText =
-    event.target.parentElement.parentElement.previousElementSibling;
+  const todoText = event.target.parentElement.parentElement.previousElementSibling;
   todoText.classList.toggle("line-through");
 }
 
 function searchTodo(event) {
-  const searchValue = event.target.value;
+  const searchValue = event.target.value.toLocaleLowerCase().trim();
   const todos = document.querySelectorAll(".todo-wrapper");
 
   for (let i = 0; i < todos.length; i++) {
-    const todoText = todos[i].querySelector(".todo-text").textContent;
+    const todoText = todos[i].querySelector(".todo-text").textContent.toLocaleLowerCase();
     if (todoText.indexOf(searchValue) > -1) {
       todos[i].classList.remove("todo-hide");
     } else {
@@ -69,7 +68,7 @@ function searchTodo(event) {
   }
 }
 
-function deleteCheckedTodos(event) {
+function deleteCheckedTodos() {
   const todos = document.querySelectorAll(".todo-wrapper");
   for (let i = 0; i < todos.length; i++) {
     const checkedTodos = todos[i].querySelector(".todo-text.line-through");
