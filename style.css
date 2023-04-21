@@ -106,3 +106,7 @@ body {
 .line-through{
     text-decoration: line-through;
 }
+
+.todo-hide{
+    display: none;
+}

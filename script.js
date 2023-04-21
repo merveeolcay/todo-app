@@ -11,6 +11,8 @@ todoForm.addEventListener("submit", addTodo);
 
 clearTodosBtn.addEventListener("click", clearTodos);
 
+searchInput.addEventListener("keyup", searchTodo);
+
 function addTodo(event) {
   event.preventDefault();
   let todoValue = todoInput.value;
@@ -44,7 +46,21 @@ function removeTodo(event) {
 }
 
 function checkTodo(event) {
-  const todoText = event.target.parentElement.parentElement.previousElementSibling;
-  todoText.classList.toggle('line-through') 
+  const todoText =
+    event.target.parentElement.parentElement.previousElementSibling;
+  todoText.classList.toggle("line-through");
+}
 
+function searchTodo(event) {
+  const searchValue = event.target.value;
+  const todos = document.querySelectorAll(".todo-wrapper");
+
+  for (let i = 0; i < todos.length; i++) {
+    const todoText = todos[i].querySelector(".todo-text").textContent;
+    if (todoText.indexOf(searchValue) > -1) {
+      todos[i].classList.remove("todo-hide");
+    } else {
+      todos[i].classList.add("todo-hide");
+    }
+  }
 }
